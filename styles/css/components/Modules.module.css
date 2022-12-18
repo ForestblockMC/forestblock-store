@@ -1,0 +1,33 @@
+.container {
+  background-color: transparent;
+  border-radius: inherit;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out 0s;
+}
+.container .img {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 10rem;
+  margin: 1rem 0 0.5rem;
+  transition: all 0.3s ease-in-out 0s;
+}
+.container p {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.ranks {
+  border-radius: 0.8rem;
+  border: none;
+  background: url("/images/ranks/vipplus.jpg");
+}
