@@ -15,7 +15,12 @@ export interface StoreModuleProps {
 
 export default function Home() {
   return (
-    <Layout news={true} name='Forestblock Store'>
+    <Layout name='Forestblock Store'>
+      <section className={styles.featured}>
+        <h3>Forestblock Store 0.0.1</h3>
+        <div className={styles.featured_img}/>
+      </section>
+      <h2>Categories</h2>
       <ul className={styles.container}>
         {
           StoreModules.map(module => {

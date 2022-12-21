@@ -1,25 +1,70 @@
-.container{
+.wrapper {
     display: flex;
-    align-items: center;
-    width: 100vw;
-    .home {
-        width: 80%;
-        margin: 0 auto;
+    flex-direction: column;
+    gap: 0;
+    .container{
+        position: relative;
+        padding: 12rem 0;
         display: flex;
-        flex-direction: column;
-        .feature {}
-        .panel {
-            h1 {
-                font-size: 2.5rem;
-                font-weight: 700;
-                color: #00FF66;
-                margin-bottom: 1rem;
-            }
-        }
-        .content {
+        align-items: center;
+        width: 100vw;
+        height: 100%;
+        background-color: #1f2024;
+        .home {
+            width: 80%;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            row-gap: 2rem;
+            .content {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+            }
         }
     }
+}
+
+.shoppingList_container{
+    position: relative;
+    z-index: 100000;
+    .fixed {
+        position: fixed;
+        inset: 0;
+        background-color: rgb(0, 0, 0);
+        opacity: 0.5;
+    }
+    .shoppingList_wrapper {
+        position: fixed;
+        inset: 0;
+        overflow-y: auto;
+        .shoppingList_modal {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            .shoppingList_modal_container {
+                display: grid; 
+                grid-auto-columns: 1fr; 
+                grid-template-columns: 1fr; 
+                grid-template-rows: 0.3fr 2.6fr 0.2fr; 
+                gap: 0px 0px; 
+                grid-template-areas: "Title" "List" "Buttons"; 
+                
+                h3 {
+                    grid-area: Title;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: #fff;
+                }
+                
+                
+
+            }
+        }
+    }
+
 }

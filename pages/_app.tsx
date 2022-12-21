@@ -1,38 +1,20 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import {Open_Sans} from '@next/font/google'
-import {useState} from 'react'
+import {Work_Sans} from '@next/font/google'
 import Stripe from 'stripe'
-import CartContext, { CartContextProps } from '@/components/context/CartContext'
+import { Provider} from 'react-redux'
+import store from '@/store/index'
 
-const OpenSans = Open_Sans({
-    weight: ["300", "400", "500", "600", "700", "800"],
+const OpenSans = Work_Sans({
+    weight: ["100", "200","300", "400", "500", "600", "700", "800", "900"],
     style: ["normal", "italic"],
     subsets: ["latin"],
 })
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [items, setItems] = useState<Stripe.Price[]>([])
-
-  const removeItems = (id: string) => {
-    setItems(items.filter(item => item.id !== id))
-  }
-
-  const addItem = (item: Stripe.Price) => {
-    setItems([item])
-  }
-
-  const cartContext:CartContextProps = {
-    items,
-    remove: removeItems,
-    add: addItem
-  }
-
   return (
-  <CartContext.Provider value={cartContext}>
-    <main className={OpenSans.className}>
+  <Provider store={store}>
       <Component {...pageProps} />
-    </main>
-  </CartContext.Provider>
+  </Provider>
   )
 }
