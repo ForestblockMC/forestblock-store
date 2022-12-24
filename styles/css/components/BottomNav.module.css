@@ -1,0 +1,109 @@
+.container {
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #3a3b42;
+  gap: 0.75rem;
+}
+.container h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+}
+.container .wrapper {
+  display: flex;
+  margin: 0 1rem;
+}
+.container .wrapper .wrapper1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.container .wrapper .wrapper1 div {
+  display: flex;
+  gap: 0.75rem;
+}
+.container .wrapper .wrapper1 div .active {
+  color: #00FF66;
+  transform: scale(1.05);
+}
+.container .wrapper .wrapper1 div .active::after {
+  width: 110%;
+  background-color: #00FF66;
+}
+.container .wrapper .wrapper1 div a {
+  font-weight: 700;
+  transition: all 0.3s ease-in-out 0s;
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+.container .wrapper .wrapper1 div a:hover {
+  color: #00FF66;
+  transform: scale(1.05);
+}
+.container .wrapper .wrapper1 div a:hover::after {
+  width: 110%;
+  background-color: #00FF66;
+}
+.container .wrapper .wrapper2 {
+  margin-left: auto;
+  display: flex;
+}
+.container .wrapper .wrapper2 div {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+}
+.container .wrapper .wrapper2 div .currency {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 7rem;
+  height: fit-content;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #00FF66;
+  border: none;
+  border-radius: 0.5rem;
+  text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.4862745098);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out 0s;
+}
+.container .wrapper .wrapper2 div .currency:hover {
+  transform: scale(1.05);
+}
+.container .wrapper .wrapper2 div .currencyOptions {
+  position: absolute;
+  left: -3rem;
+  top: 3.5rem;
+  padding: 1rem 0;
+  width: 10rem;
+  list-style: none;
+  background-color: #313238;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4862745098);
+  border-radius: 0.5rem;
+}
+.container .wrapper .wrapper2 div .currencyOptions li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+}
+.container .wrapper .wrapper2 div .currencyOptions li:hover {
+  background-color: #00FF66;
+  color: #fff;
+}
+
+.filler_line {
+  height: 100%;
+  width: 0.1rem;
+  border-radius: 1rem;
+  background-color: #fff;
+}

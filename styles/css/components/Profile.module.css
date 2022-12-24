@@ -1,0 +1,15 @@
+.container {
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out 0s;
+}
+.container img {
+  border-radius: 0.5rem;
+}
+.container:hover {
+  transform: scale(1.1);
+}
