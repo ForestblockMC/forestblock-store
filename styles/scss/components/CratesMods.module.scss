@@ -1,0 +1,18 @@
+.container {
+    position: relative;
+    background-color: transparent;
+    border-radius: inherit;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+    text-decoration: none;
+    background-color: rgb(30, 30, 30);
+    border: 0.1rem solid rgb(50, 50, 50);
+    border-radius: 0.8rem;
+    box-shadow: 0 0 0.5rem rgb(0, 0, 0);
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out 0s;
+}

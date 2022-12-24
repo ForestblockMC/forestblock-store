@@ -13,9 +13,9 @@ export interface StoreModuleProps {
   sale: boolean;
 }
 
-export default function Home() {
+export default () => {
   return (
-    <Layout name='Forestblock Store'>
+    <Layout name='Forestblock Webstore'>
       <section className={styles.featured}>
         <h3>Forestblock Store 0.0.1</h3>
         <div className={styles.featured_img}/>
@@ -28,7 +28,6 @@ export default function Home() {
             return(
               <li key={module.name.toLowerCase()}>
                 <Modules {...module}/>
-                {sale}
               </li>
             )
             })
@@ -48,13 +47,19 @@ const StoreModules: StoreModuleProps[] = [
   },
   {
     name: "Crates",
-    link: "/category/ranks",
+    link: "/category/crates/",
     image: "/ranks.png",
     sale: false,
   },
   {
     name: "Boosters",
-    link: "/category/Boosters",
+    link: "/category/boosters",
+    image: "/ranks.png",
+    sale: true,
+  },
+  {
+    name: "Packages",
+    link: "/packages",
     image: "/ranks.png",
     sale: true,
   },

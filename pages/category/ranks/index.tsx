@@ -39,7 +39,7 @@ const Ranks: NextPage<RanksProps> = ({prices}) => {
         }
       }, [])
     return (
-        <Layout name='Ranks Page'>
+        <Layout name='Forestblock | Ranks'>
             <div className={styles.container}>
                 <div className={styles.rank_sections}>
                     <div className={styles.rank_sections_inner}>
@@ -69,7 +69,7 @@ const ranks = [
         id: "price_1MFK6jIrTMoDh073OL8mOkqP",
         name: "vip",
         customName: "vip",
-        price: 9.99,
+        price: 999,
         logo: "/images/ranks/vip.jpeg",
 
         perks: {
@@ -104,7 +104,7 @@ const ranks = [
         id: "price_1MFOcxIrTMoDh0736tzwVPTb",
         name: "vipplus",
         customName: "vip+",
-        price: 19.99,
+        price: 1999,
         logo: "/images/ranks/vipplus.jpg",
         perks: {
             // socials

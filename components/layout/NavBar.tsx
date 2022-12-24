@@ -26,7 +26,7 @@ export default () => {
       const active = button.text.toLowerCase() === "shop" ? ' ' + styles['active' ]: ''
       return (
           <div className={styles.button + active} key={button.text.toLowerCase()}>
-              <Link href={`/${button.link}`}>
+              <Link href={`${button.link}`}>
                   <button.icon/> {button.text.toUpperCase()}
               </Link>
           </div>
@@ -63,12 +63,12 @@ const buttons = [
     {
       icon: RiApps2Fill,
       text: "Home",
-      link: ""
+      link: "https://forestblock-web.vercel.app/"
     },
     {
       icon: HiNewspaper,
       text: "News",
-      link: "news"
+      link: "https://forestblock-web.vercel.app/"
     },
     {
       icon: MdShoppingCart,
@@ -78,11 +78,11 @@ const buttons = [
     {
       icon: IoMdTrophy,
       text: "Leaderboard",
-      link: "leaderboard"
+      link: "https://forestblock-web.vercel.app/"
     },
     {
       icon: HiMap,
       text: "Map",
-      link: "map"
+      link: "https://forestblock-web.vercel.app/"
     },
   ]
