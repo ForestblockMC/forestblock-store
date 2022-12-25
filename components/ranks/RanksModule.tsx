@@ -8,6 +8,7 @@ import axios from "axios";
 import {currencyConverter} from '@/scripts'
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 export interface RankModulesProps {
     id: string;
@@ -46,38 +47,27 @@ export interface RankModulesProps {
 
 }
 const RankModules:FC<RankModulesProps> = (props) => {
+    const router = useRouter()
     const [price, setPrice] = React.useState<number>(0)
     const store = useSelector((state: any) => state.shopPrice)
-    // const payHandler = async () => {
-    //     const url = 'http://localhost:3333/api/payment/requestpayment'
-    //     const response = await fetch(url, {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'apikey': process.env.FB_API_KEY
-    //         },
-    //         mode: 'cors',
+    const payHandler = async () => {
+        const url = 'http://localhost:3333/api/payment/requestpayment'
+        const res = await axios.request({
+            method: 'POST',
+            url: url,
+            data: {
+                "type": props.id
+            },
             
-    //         body: JSON.stringify({
-    //             "type": props.id
-    //         })
-    //     })
-        
-    //     const data = await response.json();
-    //     return data;
-    //     // return await axios.post(url, 
-    //     // {
-    //     //     "type": props.id
-    //     // }, {
-    //     //     headers: {
-    //     //         'Content-Type': 'application/json',
-    //     //         'apikey': process.env.FB_API_KEY
-    //     //     }
-    //     // })
-    //     // .then((res) => {
-    //     //     console.log(res);
-    //     // })
-    // }
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': "6aF4er678K",
+                'Access-Control-Allow-Origin': '*',
+            },
+
+        }) 
+        router.push(res.data.url)
+    }
     useEffect(() => {
         currencyConverter(props.price, store).then((res) => {
             setPrice(res)
@@ -89,7 +79,7 @@ const RankModules:FC<RankModulesProps> = (props) => {
                 <Image className={styles.rank_img} src={props.logo} alt={`${props.name}`} width={80} height={80}/>
                 <h2>{props.customName}</h2>
                 <p>{store.sign} {price.toFixed(2)}</p>
-                <button onClick={() => console.log("Payment not implemented yet!")}>Purchase Now</button>
+                <button onClick={payHandler}>Purchase Now</button>
             </div>
             <div className={styles.rank_wrapper_details}>
                 <div>{props.perks.chatColor}</div>
