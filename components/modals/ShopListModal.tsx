@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Work_Sans } from "@next/font/google";
 import { ShopItem } from "@/types";
 
-const OpenSans = Work_Sans({
+const workSans = Work_Sans({
     weight: ["100", "200","300", "400", "500", "600", "700", "800", "900"],
     style: ["normal", "italic"],
     subsets: ["latin"],
@@ -20,7 +20,7 @@ export default () => {
     return (
 
         <Transition appear show={listBoolean.open}>
-        <Dialog as="div" className={`${styles.shoppingList_container} ${OpenSans.className}`} onClose={() => dispatch(closeModal())}>
+        <Dialog as="div" className={`${styles.shoppingList_container} ${workSans.className}`} onClose={() => dispatch(closeModal())}>
             <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -30,11 +30,11 @@ export default () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
             >
-            <div className={styles.fixed} />
+            <div className={styles.bg} />
             </Transition.Child>
-            <div className={styles.shoppingList_wrapper}>
-            <div className={styles.shoppingList_modal}>
-                <Dialog.Panel className={styles.shoppingList_modal_container}>
+            <div className={styles.wrapper}>
+            <div className={styles.container}>
+                <Dialog.Panel className={styles.modal}>
                     <Dialog.Title as="h3" className="">Shopping List</Dialog.Title>
                     <div className={styles.shoppingList}>
                     {shoppingList.shopList.length > 0 ?

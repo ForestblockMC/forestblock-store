@@ -1,4 +1,4 @@
-.wrapper {
+.layout_wrapper {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -24,26 +24,26 @@
     }
 }
 
-.shoppingList_container{
+.shoppingList_container {
     position: relative;
     z-index: 100000;
-    .fixed {
+    .bg {
         position: fixed;
         inset: 0;
         background-color: rgb(0, 0, 0);
         opacity: 0.5;
     }
-    .shoppingList_wrapper {
+    .wrapper {
         position: fixed;
         inset: 0;
         overflow-y: auto;
-        .shoppingList_modal {
+        .container {
             display: flex;
             width: 100%;
             height: 100%;
             align-items: center;
             justify-content: center;
-            .shoppingList_modal_container {
+            .modal {
                 display: grid; 
                 grid-auto-columns: 1fr; 
                 grid-template-columns: 1fr; 
@@ -104,11 +104,98 @@
                         background-color: #00FF66;
                     }
                 }
-                
-                
-
             }
         }
     }
 
+}
+.loginModal_container {
+    position: relative;
+    z-index: 100000;
+    .bg {
+        position: fixed;
+        inset: 0;
+        background-color: rgb(0, 0, 0);
+        opacity: 0.5;
+    }
+
+    .wrapper {
+        position: fixed;
+        inset: 0;
+        overflow-y: auto;
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            .modal {
+                display: grid; 
+                grid-auto-columns: 1fr; 
+                grid-template-columns: 1fr; 
+                grid-template-rows: 4rem 15rem 2.6fr; 
+                gap: 0px 0px; 
+                grid-template-areas: "Title" "Form" "Description"; 
+                height: 75vh;
+                width: 75vw;
+                box-shadow: 0 0 1rem #1f2024;
+                .title {
+                    grid-area: Title;
+                    width: 100%;
+                    background-color: #1f2024;
+                    display: grid;
+                    align-items: center;
+                    h2 {
+                        margin-left: 1rem;
+                        font-size: 2rem;
+                        font-weight: 700;
+                        color: #fff;
+                    }
+                }
+                .form{
+                    grid-area: Form;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 2.5rem;
+                    box-sizing: border-box;
+                    background-color: #2d2e34;
+                    gap: 1rem;
+                    form {
+                        display: flex;
+                        .form_input{
+                            width: 20rem;
+                            height: 3.5rem;
+                            position: relative;
+                            label {
+                                position: absolute;
+                                left: 0.5rem;
+                                top: 0.45rem;
+                                font-size: 0.75rem;
+                                font-weight: 400;
+                            }
+                            .form_input_text {
+                                padding: 1rem 0.5rem 0.25rem 0.5rem;
+                                width: 100%;
+                                height: 100%;
+                                box-sizing: border-box;
+                                border: none;
+                                background-color: #1f2024;
+                                border-radius: 0.35rem;
+                            }
+                        }
+                    }
+                }
+                .description {
+                    grid-area: Description;
+                    background-color: #1f2024;
+                    display: flex;
+                    gap: 1rem;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
 }

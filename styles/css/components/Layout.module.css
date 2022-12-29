@@ -1,9 +1,9 @@
-.wrapper {
+.layout_wrapper {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
-.wrapper .container {
+.layout_wrapper .container {
   position: relative;
   padding: 12rem 0;
   display: flex;
@@ -12,13 +12,13 @@
   height: 100%;
   background-color: #1f2024;
 }
-.wrapper .container .home {
+.layout_wrapper .container .home {
   width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-.wrapper .container .home .content {
+.layout_wrapper .container .home .content {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -28,25 +28,25 @@
   position: relative;
   z-index: 100000;
 }
-.shoppingList_container .fixed {
+.shoppingList_container .bg {
   position: fixed;
   inset: 0;
   background-color: rgb(0, 0, 0);
   opacity: 0.5;
 }
-.shoppingList_container .shoppingList_wrapper {
+.shoppingList_container .wrapper {
   position: fixed;
   inset: 0;
   overflow-y: auto;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal {
+.shoppingList_container .wrapper .container {
   display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal .shoppingList_modal_container {
+.shoppingList_container .wrapper .container .modal {
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-columns: 1fr;
@@ -61,7 +61,7 @@
   border: 0.1rem solid #2b2a33;
   box-shadow: 0 0 1rem #1f2024;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal .shoppingList_modal_container h3 {
+.shoppingList_container .wrapper .container .modal h3 {
   grid-area: Title;
   display: flex;
   justify-content: flex-start;
@@ -70,22 +70,22 @@
   font-weight: 700;
   color: #fff;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal .shoppingList_modal_container .shoppingList {
+.shoppingList_container .wrapper .container .modal .shoppingList {
   grid-area: List;
   width: 100%;
   height: 100%;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal .shoppingList_modal_container .shoppingList .list {
+.shoppingList_container .wrapper .container .modal .shoppingList .list {
   overflow-y: scroll;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal .shoppingList_modal_container .shoppingList .noItems {
+.shoppingList_container .wrapper .container .modal .shoppingList .noItems {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal .shoppingList_modal_container .buttons_container {
+.shoppingList_container .wrapper .container .modal .buttons_container {
   grid-area: Buttons;
   display: flex;
   gap: 1rem;
@@ -93,7 +93,7 @@
   height: 100%;
   justify-content: flex-end;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal .shoppingList_modal_container .buttons_container button {
+.shoppingList_container .wrapper .container .modal .buttons_container button {
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -101,9 +101,99 @@
   border: none;
   border-radius: 1rem;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal .shoppingList_modal_container .buttons_container .cancel {
+.shoppingList_container .wrapper .container .modal .buttons_container .cancel {
   background-color: #2b2a33;
 }
-.shoppingList_container .shoppingList_wrapper .shoppingList_modal .shoppingList_modal_container .buttons_container .confirm {
+.shoppingList_container .wrapper .container .modal .buttons_container .confirm {
   background-color: #00FF66;
+}
+
+.loginModal_container {
+  position: relative;
+  z-index: 100000;
+}
+.loginModal_container .bg {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.5;
+}
+.loginModal_container .wrapper {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+}
+.loginModal_container .wrapper .container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.loginModal_container .wrapper .container .modal {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4rem 15rem 2.6fr;
+  gap: 0px 0px;
+  grid-template-areas: "Title" "Form" "Description";
+  height: 75vh;
+  width: 75vw;
+  box-shadow: 0 0 1rem #1f2024;
+}
+.loginModal_container .wrapper .container .modal .title {
+  grid-area: Title;
+  width: 100%;
+  background-color: #1f2024;
+  display: grid;
+  align-items: center;
+}
+.loginModal_container .wrapper .container .modal .title h2 {
+  margin-left: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.loginModal_container .wrapper .container .modal .form {
+  grid-area: Form;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  background-color: #2d2e34;
+  gap: 1rem;
+}
+.loginModal_container .wrapper .container .modal .form form {
+  display: flex;
+}
+.loginModal_container .wrapper .container .modal .form form .form_input {
+  width: 20rem;
+  height: 3.5rem;
+  position: relative;
+}
+.loginModal_container .wrapper .container .modal .form form .form_input label {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.loginModal_container .wrapper .container .modal .form form .form_input .form_input_text {
+  padding: 1rem 0.5rem 0.25rem 0.5rem;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: none;
+  background-color: #1f2024;
+  border-radius: 0.35rem;
+}
+.loginModal_container .wrapper .container .modal .description {
+  grid-area: Description;
+  background-color: #1f2024;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
 }

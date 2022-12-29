@@ -10,6 +10,9 @@ const nextConfig = {
       },
     ]
   },
+  images: {
+    domains: ["crafthead.net", "mc-heads.net"]
+  },
   env: {
       CurrencyConvertAPI: process.env.NEXT_PUBLIC_CURRENCY_CONVERT_API,
   }

@@ -6,12 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Dialog, Transition } from '@headlessui/react';
 import { closeModal } from '@/store';
 import Head from 'next/head';
-import ShopListModal from '../ShopList/ShopListModal';
+import ShopListModal from '../modals/ShopListModal';
+import LoginModal from '../modals/LoginModal';
 export interface LayoutProps {
   name: string;
   children: React.ReactNode;
 }
-const OpenSans = Work_Sans({
+const workSans = Work_Sans({
     weight: ["100", "200","300", "400", "500", "600", "700", "800", "900"],
     style: ["normal", "italic"],
     subsets: ["latin"],
@@ -44,7 +45,8 @@ const Layout: FC<LayoutProps> = ({name, children}) => {
           <link rel="manifest" href="/icons/manifest.json"/>
       </Head>
       <ShopListModal/>
-      <div className={`${styles.wrapper} ${OpenSans.className}`}>
+      <LoginModal/>
+      <div className={`${styles.layout_wrapper} ${workSans.className}`}>
         <NavBar/>
         <main className={styles.container}>
           <div className={styles.home}>
