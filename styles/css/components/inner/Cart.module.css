@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  width: min-content;
+  height: max-content;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgb(0, 255, 183);
+  font-weight: 600;
+  text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.4862745098);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out 0s;
+}
+.container:hover {
+  transform: scale(1.05);
+}

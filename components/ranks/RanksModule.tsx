@@ -51,22 +51,27 @@ const RankModules:FC<RankModulesProps> = (props) => {
     const [price, setPrice] = React.useState<number>(0)
     const store = useSelector((state: any) => state.shopPrice)
     const payHandler = async () => {
-        const url = 'http://localhost:3333/api/payment/requestpayment'
-        const res = await axios.request({
-            method: 'POST',
-            url: url,
-            data: {
-                "type": props.id
-            },
-            
-            headers: {
-                'Content-Type': 'application/json',
-                'apikey': "6aF4er678K",
-                'Access-Control-Allow-Origin': '*',
-            },
+        const url = 'https://api.forestblock.net/api/payment/requestpayment/rank'
+        try {
+            const res = await axios.request({
+                method: 'POST',
+                url: url,
+                data: {
+                    "type": props.id
+                },
+                
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': "6aF4er678K",
+                    'Access-Control-Allow-Origin': '*',
+                },
+    
+            })
+            router.push(res.data.url)
+    
+        } catch {
 
-        }) 
-        router.push(res.data.url)
+        }
     }
     useEffect(() => {
         currencyConverter(props.price, store).then((res) => {

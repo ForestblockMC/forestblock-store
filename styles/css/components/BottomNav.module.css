@@ -50,6 +50,7 @@
 .container .wrapper .wrapper2 {
   margin-left: auto;
   display: flex;
+  gap: 1rem;
 }
 .container .wrapper .wrapper2 div {
   margin-left: 1rem;
@@ -72,7 +73,7 @@
   text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.4862745098);
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
 }
 .container .wrapper .wrapper2 div .currency:hover {
   transform: scale(1.05);

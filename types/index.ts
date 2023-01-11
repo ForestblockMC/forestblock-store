@@ -1,8 +1,9 @@
 export interface ShopItem {
-    id: CratesItem["id"]
-    name: CratesItem["name"]
-    price: CratesItem["price"]
-    count: number
+    id?: CratesItem["id"]
+    name?: CratesItem["name"]
+    price?: CratesItem["price"]
+    image?: CratesItem["image"]
+    count?: number
 }
 
 export interface ActionItem {

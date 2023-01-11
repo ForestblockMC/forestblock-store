@@ -1,4 +1,4 @@
-import {configureStore, createSlice} from '@reduxjs/toolkit'
+import {Action, configureStore, createSlice} from '@reduxjs/toolkit'
 import {ShopItem, ActionItem} from '@/types'
 import { stat } from 'fs'
 const shopListArray: ShopItem[] = []
@@ -10,14 +10,28 @@ const shopListSlice = createSlice({
     reducers: {
         addShop(state, action: ActionItem) {
             if (state.shopList.find(item => item.id === action.payload.item.id)) {
+                const num = state.shopList.find(i => i.id === action.payload.item.id)!.count as number
+                const integer = num + 1
+                state.shopList.find(i => i.id === action.payload.item.id)!.count = integer
                 return
-            } else {
-                state.shopList.push(action.payload.item)
             }
+            state.shopList.push(action.payload.item)
         },
         removeShop(state, action: ActionItem) {
             state.shopList = state.shopList.filter(item => item.id !== action.payload.item.id)
+        },
+        updateAmount(state, action: any) {
+            const num = parseInt(action.payload.value)
+            if (num == 0) {
+                state.shopList = state.shopList.filter(item => item.id !== action.payload.item.id)
+                return;
+            }
+            state.shopList.find(i => i.id === action.payload.item.id)!.count = num
+        },
+        resetList(state) {
+            state.shopList = []
         }
+
     }
 })
 const shopPrice = createSlice({
@@ -107,7 +121,7 @@ const store = configureStore({
 })
 
 
-export const {addShop, removeShop} = shopListSlice.actions
+export const {addShop, removeShop, updateAmount, resetList} = shopListSlice.actions
 export const {changePrice} = shopPrice.actions
 export const {login, logout} = loginFactor.actions
 

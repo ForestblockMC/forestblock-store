@@ -4,11 +4,14 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 import { Listbox } from "@headlessui/react"
 import {TbSelector} from "react-icons/tb"
-import Profile from "./Profile"
+import {BsCartFill} from "react-icons/bs"
+import Profile from "./innerComponent/Profile"
 import { useDispatch ,useSelector } from "react-redux"
 import { openModal, changePrice } from "@/store"
+import Cart from "./innerComponent/Cart"
 export default () => {
     const store = useSelector((state: any) => state.shopPrice)
+    const shoppingList = useSelector((state:any) => state.shopList)
 
     const dispatch = useDispatch()
     const router = useRouter()
@@ -65,9 +68,7 @@ export default () => {
                     <div>
                         <CurrencySelector/>
                     </div>
-                    <div>
-                        <button onClick={() => dispatch(openModal())}>Cart</button>
-                    </div>
+                    <Cart/>
                 </div>
             </div>
         </section>
